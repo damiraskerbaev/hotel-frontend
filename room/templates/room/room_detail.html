@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Room
+{% endblock title %}
+
+{% block style %}
+
+    <style>
+        .room img {
+            max-width: 70vh;
+        }
+    </style>
+
+{% endblock style %}
+
+{% block content %}
+
+<a href="{% url 'room_list' %}">Back</a>
+
+    <div class="room">
+        <h1>Hotel: {{ room.hotel }}</h1>            
+        <h1>Number of the room: {{ room.number }}</h1>
+        <h1>Capacity: {{ room.capacity }}</h1>
+        <h1>Price per night: {{ room.price_per_night }}$</h1>
+        <p>Is used: {{ room.is_used }}</p>
+        <p>Description: {{ hotel.description }}</p>
+    </div>
+
+    <a href="{% url 'room_edit' room.pk %}">Edit</a>
+    <a href="{% url 'room_delete' room.pk %}">Delete</a>
+
+
+
+{% endblock content %}

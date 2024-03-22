@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Rooms
+{% endblock title %}
+
+{% block style %}
+
+    <style>
+        .room img {
+            max-width: 70vh;
+        }
+    </style>
+
+{% endblock style %}
+
+{% block content %}
+
+    {% for rooms in room %}
+
+        <div class="room">
+            <a href="{% url 'room_detail' room.id %}">
+                <h1>Name: {{ room.hotel }}</h1>
+            </a>
+            
+            <h1>Address: {{ room.capacity }}</h1>
+            <h1>City: {{ room.is_used }}</h1>
+        </div>
+
+    {% endfor %}
+
+{% endblock content %}

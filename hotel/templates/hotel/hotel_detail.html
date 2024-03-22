@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Hotel
+{% endblock title %}
+
+{% block style %}
+
+    <style>
+        .hotel img {
+            max-width: 70vh;
+        }
+    </style>
+
+{% endblock style %}
+
+{% block content %}
+
+<a href="{% url 'hotel_list' %}">Back</a>
+
+    <div class="hotel">
+        <h1>Name: {{ hotel.name }}</h1>            <h1>Address: {{ hotel.address }}</h1>
+        <h1>City: {{ hotel.city }}</h1>
+        <h1>Country: {{ hotel.country }}</h1>
+        <p>Rating: {{ hotel.rating }}</p>
+        <p>Description: {{ hotel.description }}</p>
+        <img src="{{ hotel.image.url }}" alt="">
+    </div>
+
+    <a href="{% url 'hotel_edit' hotel.pk %}">Edit</a>
+    <a href="{% url 'hotel_delete' hotel.pk %}">Delete</a>
+
+
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete room
+{% endblock title %}
+
+{% block content %}
+
+    <h1>Delete room</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+
+{% endblock content %}
